@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(document.querySelector('#feedback').value);
         localStorage.setItem('email', email);
         document.getElementById('feedback').value = '';
-        let counter = localStorage.getItem('counter');
+        let counter = parseInt(localStorage.getItem('counter'));
         if (!counter) {
             counter = 0;
         }
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('counter').innerText = counter;
     });
     document.getElementById('list-elements-input').addEventListener('change', event => {
-        const numOfElements = event.target.value;
+        const numOfElements = parseInt(event.target.value);
         const list = document.querySelector('ul');
         list.innerHTML = '';
         for(let i = 0; i < numOfElements; i++) {
